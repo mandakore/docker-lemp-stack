@@ -1,4 +1,4 @@
 .env
 secrets/
-my.cnf
+*.cnf
 inception.pdf
