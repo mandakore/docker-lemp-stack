@@ -1,5 +1,4 @@
 services:
-
   mariadb:
     image: mariadb
     build: ./requirements/mariadb
@@ -12,6 +11,20 @@ services:
     networks:
       - inception_network
 
+  wordpress:
+    image: wordpress
+    build: ./requirements/wordpress
+    container_name: wordpress
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      - mariadb
+    volumes:
+      - wordpress_data:/var/www/html
+    networks:
+      - inception_network
+
 networks:
   inception_network:
     driver: bridge
@@ -20,9 +33,15 @@ volumes:
   mariadb_data:
     driver: local
     driver_opts:
-
       type: none
-
       o: bind
-
+      # TODO: VMに移動したら変更する
       device: /Users/atashiro/atashiro/data/mariadb
+
+  wordpress_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      # TODO: VMに移動したら変更する
+      device: /Users/atashiro/atashiro/data/wordpress
