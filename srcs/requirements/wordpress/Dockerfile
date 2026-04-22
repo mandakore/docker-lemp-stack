@@ -30,6 +30,8 @@ RUN curl -fsSL -o /usr/local/bin/wp \
 
 RUN mkdir -p /var/www/html
 
+RUN echo "memory_limit = 256M" >> /etc/php83/php.ini
+
 COPY conf/www.conf /etc/php83/php-fpm.d/www.conf
 
 COPY tools/init_wp.sh /init_wp.sh
