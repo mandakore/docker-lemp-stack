@@ -39,6 +39,13 @@ services:
     networks:
       - inception_network
 
+  # website:
+  #   image: website
+  #   build: ./requirements/bonus/website
+  #   container_name: website
+  #   restart: unless-stopped
+  #   networks:
+  #     - inception_network
 
 networks:
   inception_network:
