@@ -58,7 +58,7 @@ volumes:
       type: none
       o: bind
       # TODO: VMに移動したら変更する
-      device: /Users/atashiro/atashiro/data/mariadb
+      device: /Users/atashiro/data/mariadb
 
   wordpress_data:
     driver: local
@@ -66,4 +66,4 @@ volumes:
       type: none
       o: bind
       # TODO: VMに移動したら変更する
-      device: /Users/atashiro/atashiro/data/wordpress
+      device: /Users/atashiro/data/wordpress
