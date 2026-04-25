@@ -1,6 +1,6 @@
 COMPOSE_FILE	= srcs/docker-compose.yml
 
-DATA_DIR		= /home/atashiro/data
+DATA_DIR		= /Users/atashiro/data
 
 all: up
 
