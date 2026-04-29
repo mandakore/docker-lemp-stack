@@ -4,6 +4,5 @@ inception.pdf
 *.swp
 *~
 .DS_Store
-*.conf
-*.cnf
+
 bonus/
